@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Carlos-Martorell" />
+    <link href="/src/style.css" rel="stylesheet">
+    <title>Joke API APP</title>
+  </head>
+  <body class="bg-cover bg-center bg-no-repeat min-h-screen place-items-center justify-center" 
+        style="background-image: url(./src/assets/group-happy-students-having-fun-laughing-while-using-laptop-studying-classroom-their-teacher-is-background.jpg);">
+    <section class=" absolute top-50
+          bg-white/80 p-8 rounded-sm shadow-2xlflex flex-col max-w-md justify-center  items-center text-center space-y-6       
+      ">
+          <h1 class="text-lg font-bold text-gray-800">Preparat per riure? 🤣</h1>
+          <div id="jokeBox" class="text-xl text-gray-700 mt-4 italic border-amber-300 border-2">
+            Loading joke...
+          </div>
+          <button 
+              id="newJokeBtn" 
+              type="button" 
+              class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-full 
+                    shadow-lg transition duration-300 ease-in-out transform hover:scale-105
+                    focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-75">
+              New Joke
+          </button>
+      </section>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
