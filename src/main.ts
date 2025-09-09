@@ -2,7 +2,7 @@ import './style.css'
 import {getJoke} from './acuditsapp/acudits-app'
 import {getSelectedScore, setupRatingLogic} from './rating-app'
 import type {Joke, Report} from './interfaces';
-
+import  {fetchAndShowWeather} from './weatherapp/weather-app'
 
 
 const jokeBox = document.getElementById('jokeBox');
@@ -15,7 +15,6 @@ let reportJokes: Report[] = [];
 const showJoke = async () => { 
   try {
       const jokeData: Joke = await getJoke(); 
-      console.log('Chiste obtenido:', jokeData);
       if (jokeBox) {
           jokeBox.innerHTML = `
             <p>${jokeData.joke}</p>
@@ -52,4 +51,5 @@ newJokeBtn?.addEventListener('click', () => {
 document.addEventListener('DOMContentLoaded', () => {
   setupRatingLogic(); 
   showJoke(); 
+  fetchAndShowWeather();
 });
