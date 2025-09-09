@@ -1,6 +1,6 @@
 import './style.css'
 import {getJoke} from './acuditsapp/acudits-app'
-import {getSelectedScore, setupRatingLogic} from './acuditsapp/rating-app'
+import {getSelectedScore, setupRatingLogic} from './rating-app'
 import type {Joke, Report} from './interfaces';
 
 
