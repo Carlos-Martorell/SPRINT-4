@@ -1,5 +1,17 @@
 @import "tailwindcss";
 
+@theme {
+  --shadow-icon: -2px 12px 36px -7px rgba(0,0,0,1);
+}
+
+.selected {
+  @apply shadow-lg; 
+  @apply ring-4 ring-blue-500 rounded-full;
+  @apply shadow-icon;
+
+
+}
+
 /*
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;

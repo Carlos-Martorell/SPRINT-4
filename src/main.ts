@@ -1,10 +1,16 @@
 import './style.css'
 import {getJoke} from './acuditsapp/acudits-app'
-import type {Joke} from './interfaces';
+import {getSelectedScore, setupRatingLogic} from './acuditsapp/rating-app'
+import type {Joke, Report} from './interfaces';
 
 
-// aqui tengo que mostrar el chiste en el index.html
+
 const jokeBox = document.getElementById('jokeBox');
+const newJokeBtn = document.getElementById('newJokeBtn');
+let currentJokeData: Joke | null = null;
+let reportJokes: Report[] = []; 
+
+
 
 const showJoke = async () => { 
   try {
@@ -14,6 +20,7 @@ const showJoke = async () => {
           jokeBox.innerHTML = `
             <p>${jokeData.joke}</p>
           `;
+          currentJokeData = jokeData;
       }
   } catch (error) {
       console.error('Error al obtener el chiste:', error);
@@ -23,7 +30,26 @@ const showJoke = async () => {
   }
 };
 
-showJoke();
 
-const newJokeBtn = document.getElementById('newJokeBtn');
-newJokeBtn?.addEventListener('click', showJoke);
+newJokeBtn?.addEventListener('click', () => {
+
+  const score = getSelectedScore();
+
+  // 2. Si hay una puntuación, guarda el chiste en el array.
+  if (currentJokeData && score !== null) {
+          reportJokes.push({
+          joke: currentJokeData.joke,
+          score: score,
+          date: new Date().toISOString()
+      });
+      console.log('Reporte de chistes:', reportJokes);
+  }
+
+  showJoke();
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  setupRatingLogic(); 
+  showJoke(); 
+});

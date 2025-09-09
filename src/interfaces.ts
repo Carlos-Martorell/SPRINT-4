@@ -6,3 +6,10 @@ export interface Joke {
     joke: string;
     status: number;
   }
+
+
+export interface Report {
+    joke:    string;
+    score:   number;
+    date:    string;
+}

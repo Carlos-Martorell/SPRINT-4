@@ -8,19 +8,27 @@
     <link href="/src/style.css" rel="stylesheet">
     <title>Joke API APP</title>
   </head>
-  <body class="bg-cover bg-center bg-no-repeat min-h-screen place-items-center justify-center" 
+  <body class="bg-cover bg-center bg-no-repeat min-h-screen items-center justify-center flex" 
         style="background-image: url(./src/assets/group-happy-students-having-fun-laughing-while-using-laptop-studying-classroom-their-teacher-is-background.jpg);">
-    <section class=" absolute top-50
-          bg-white/80 p-8 rounded-sm shadow-2xlflex flex-col max-w-md justify-center  items-center text-center space-y-6       
-      ">
-          <h1 class="text-lg font-bold text-gray-800">Preparat per riure? 🤣</h1>
-          <div id="jokeBox" class="text-xl text-gray-700 mt-4 italic border-amber-300 border-2">
+    <section class="bg-white/80 p-8 rounded-sm shadow-2xlflex flex-col max-w-md justify-center  items-center text-center space-y-6">
+          <h1 class="text-lg font-bold text-gray-800">Get ready to laugh! 🤣</h1>
+          <div id="jokeBox" class="text-xl text-gray-700 mt-4 italic border-blue-500 border-4 p-4 rounded-lg bg-white/90">
             Loading joke...
           </div>
+
+          <div id="rating-container" class="mt-4 flex flex-col items-center gap-4">
+            <h4 class="text-lg font-semibold text-gray-800">Do you value the joke?</h4>
+            <div class="flex justify-center space-x-4">
+                <div data-score="1" class="rating-icon text-4xl cursor-pointer hover:scale-110 transition-transform duration-200 ease-in-out">😡</div>
+                <div data-score="2" class="rating-icon text-4xl cursor-pointer hover:scale-110 transition-transform duration-200 ease-in-out">😐</div>
+                <div data-score="3" class="rating-icon text-4xl cursor-pointer hover:scale-110 transition-transform duration-200 ease-in-out">😂</div>
+            </div>
+          </div>  
+
           <button 
               id="newJokeBtn" 
               type="button" 
-              class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-full 
+              class="bg-blue-500 hover:bg-blue-300 text-white font-semibold py-3 px-6 rounded-full 
                     shadow-lg transition duration-300 ease-in-out transform hover:scale-105
                     focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-75">
               New Joke
