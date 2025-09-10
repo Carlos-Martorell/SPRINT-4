@@ -1,16 +1,13 @@
 import './style.css'
-import {getJoke} from './acuditsapp/acudits-app'
+import {getJoke} from './acuditsapp/get-joke'
 import {getSelectedScore, setupRatingLogic} from './rating-app'
 import type {Joke, Report} from './interfaces';
 import  {fetchAndShowWeather} from './weatherapp/weather-app'
-
 
 const jokeBox = document.getElementById('jokeBox');
 const newJokeBtn = document.getElementById('newJokeBtn');
 let currentJokeData: Joke | null = null;
 let reportJokes: Report[] = []; 
-
-
 
 const showJoke = async () => { 
   try {
@@ -34,7 +31,6 @@ newJokeBtn?.addEventListener('click', () => {
 
   const score = getSelectedScore();
 
-  // 2. Si hay una puntuación, guarda el chiste en el array.
   if (currentJokeData && score !== null) {
           reportJokes.push({
           joke: currentJokeData.joke,
@@ -43,7 +39,6 @@ newJokeBtn?.addEventListener('click', () => {
       });
       console.log('Reporte de chistes:', reportJokes);
   }
-
   showJoke();
 });
 

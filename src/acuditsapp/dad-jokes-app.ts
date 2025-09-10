@@ -1,7 +1,7 @@
 
-import type {Joke} from '../interfaces';
+import type {dadJoke, Joke} from '../interfaces';
 
-export const getJoke = async(): Promise<Joke> => {
+export const getDadJoke = async(): Promise<Joke> => {
     const url = `https://icanhazdadjoke.com/`;
 
     try {
@@ -13,8 +13,11 @@ export const getJoke = async(): Promise<Joke> => {
             throw new Error(`Error ${resp.status}: No se pudo obtener el chiste`);
         }
 
-        const data: Joke = await resp.json();
-        return data;    
+        const data: dadJoke = await resp.json();
+        return {
+            joke: data.joke,
+          }
+        ;    
     } catch (err:any) {throw err}
     
 
