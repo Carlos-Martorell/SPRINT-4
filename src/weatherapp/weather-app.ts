@@ -29,9 +29,6 @@ const getWeather = async(): Promise<Weather> =>  {
   export  const fetchAndShowWeather = async () => {
         try {
             const weatherData: Weather = await getWeather();
-            console.log('Información del clima:', weatherData);
-            
-            // **Lógica para mostrar el clima en el header**
             displayWeather(weatherData);
     
         } catch (error) {
@@ -48,7 +45,7 @@ const getWeather = async(): Promise<Weather> =>  {
     
     const getLocalIconPath = (pictocode: number): string => {
         const formattedCode = formatPictocode(pictocode);
-        return `./src/assets/weather-icons/${formattedCode}_day.png`;
+        return `/weather-icons/${formattedCode}_day.png`;
     };
 
     const displayWeather = (data: Weather) => {
