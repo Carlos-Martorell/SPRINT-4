@@ -55,7 +55,7 @@ const getWeather = async(): Promise<Weather> =>  {
         if (!weatherHeader) return;
     
         const cityName = `Barcelona`;
-        const currentTemp = data.data_1h.temperature[0];
+        const currentTemp = data.data_1h.temperature[0].toFixed(1);;
         const tempUnit = data.units.temperature;
         const pictocode = data.data_1h.pictocode[0];
         const iconPath = getLocalIconPath(pictocode);;

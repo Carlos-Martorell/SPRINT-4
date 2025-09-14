@@ -1,0 +1,1 @@
+https://www.magicpattern.design/tools/blob-generator

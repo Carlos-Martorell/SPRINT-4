@@ -1,8 +1,9 @@
 import './style.css'
 import {getJoke} from './acuditsapp/get-joke'
-import {getSelectedScore, setupRatingLogic} from './rating-app'
+import {getSelectedScore,resetRatingSelection, setupRatingLogic} from './rating-app'
 import type {Joke, Report} from './interfaces';
 import  {fetchAndShowWeather} from './weatherapp/weather-app'
+import  {setRandomBlobBackground} from './assets/blob-css/blob'
 
 const jokeBox = document.getElementById('jokeBox');
 const newJokeBtn = document.getElementById('newJokeBtn');
@@ -39,6 +40,8 @@ newJokeBtn?.addEventListener('click', () => {
       });
       console.log('Reporte de chistes:', reportJokes);
   }
+  setRandomBlobBackground();
+  resetRatingSelection();
   showJoke();
 });
 
@@ -47,4 +50,5 @@ document.addEventListener('DOMContentLoaded', () => {
   setupRatingLogic(); 
   showJoke(); 
   fetchAndShowWeather();
+  setRandomBlobBackground();
 });

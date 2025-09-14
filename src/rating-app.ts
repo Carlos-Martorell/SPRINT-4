@@ -24,6 +24,16 @@ export function setupRatingLogic(): void {
     });
 }
 
+export function resetRatingSelection(): void {
+    const ratingContainer = document.getElementById('rating-container');
+    const ratingIcons = ratingContainer?.querySelectorAll('.rating-icon');
+    ratingIcons?.forEach(icon => {
+        icon.classList.remove('selected');
+    });
+    selectedScore = null; 
+}
+
+
 // Función para obtener la puntuación seleccionada
 export function getSelectedScore(): number | null {
     return selectedScore;
