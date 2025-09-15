@@ -7,7 +7,7 @@ const apiKey = 'peow3uErzCsdjy1g'; // Reemplaza con tu API key real
 const apiUrl = `https://my.meteoblue.com/packages/basic-1h_basic-day?lat=${lat}&lon=${lon}&apikey=${apiKey}`;
 
 
-const getWeather = async(): Promise<Weather> =>  {   
+export const getWeather = async(): Promise<Weather> =>  {   
     
     try {            
     const resp = await fetch(apiUrl) // fetch devuelve Promise<Response>

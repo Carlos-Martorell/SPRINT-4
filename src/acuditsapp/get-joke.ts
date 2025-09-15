@@ -17,3 +17,6 @@ export const getJoke = async (): Promise<Joke> => {
 };
 
 
+export const resetCounter = () => {
+    counter = 0;
+};
