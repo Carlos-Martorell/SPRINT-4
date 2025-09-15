@@ -7,11 +7,14 @@
     "devTW": "npx tailwindcss -i ./src/style.css -o ./src/output.css --watch",
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "vitest"
   },
   "devDependencies": {
+    "jsdom": "^27.0.0",
     "typescript": "~5.8.3",
-    "vite": "^7.1.2"
+    "vite": "^7.1.2",
+    "vitest": "^3.2.4"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.13",

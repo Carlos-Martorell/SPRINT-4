@@ -20,6 +20,8 @@ Responsive Design: Built with Tailwind CSS for a sleek, mobile-friendly interfac
 
 index.html — The main interface for the application.
 
+/public/ – Stores static assets that need to be served directly, such as the weather icons.
+
 /src/main.ts — The primary entry point for the app logic.
 
 /src/acuditsapp/ — Contains the joke-fetching logic for both APIs.
